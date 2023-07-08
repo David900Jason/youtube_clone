@@ -1,0 +1,280 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+:where(ul[role=list], ol[role=list]) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: content-box;
+  background-color: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.header {
+  min-height: 3.5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.header img:not(.avatar, .yt-logo, .spec) {
+  width: 24px;
+  aspect-ratio: 1/1;
+}
+.header .hover:hover {
+  border-radius: 50%;
+  background: #ddd;
+}
+.header .start .menu-icon img {
+  width: 24px;
+}
+.header .start .logo {
+  cursor: pointer;
+}
+.header .start .logo img {
+  width: 90px;
+  aspect-ratio: 9/2;
+}
+.header .start .logo span {
+  font-size: 10px;
+  align-self: flex-start;
+}
+.header .center {
+  flex: 0 1 728px;
+}
+.header .center .search-bar:focus-within > .search-icon {
+  display: block;
+}
+.header .center #search-bar {
+  font-size: 1rem;
+  border-radius: 2.5rem;
+  border-end-end-radius: 0rem;
+  border-start-end-radius: 0rem;
+  border-color: #ccc;
+  box-shadow: inset 0 1px 2px #eee;
+  width: 540px;
+  min-height: 38px;
+}
+.header .center #search-bar:focus {
+  outline: none;
+  border-color: #aaa;
+  box-shadow: inset 0px 1px 5px 1px #ddd;
+  padding-left: 3rem;
+  width: 572px;
+}
+.header .center .search-button {
+  border: 1px solid #ccc;
+  border-left-color: transparent;
+  background-color: #f8f8f8;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  height: 41px;
+  width: 64px;
+  margin: 0;
+}
+.header .center .search-button .speaker {
+  width: 40px;
+  aspect-ratio: 1/1;
+}
+.header .center .search-button .speaker img {
+  text-align: center;
+}
+.header .center .search-button:hover {
+  background: hsl(0, 0%, 95%);
+}
+.header .center .search-button + .search-icon {
+  width: 20px;
+  display: none;
+}
+.header .end {
+  min-width: 225px;
+}
+.header .end [class*=icon] {
+  width: 40px;
+  height: 40px;
+}
+.header .end .user {
+  width: 60px;
+  aspect-ratio: 60/34;
+}
+.header .end .user .avatar {
+  width: 32px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 13.5% 1fr;
+  gap: 1em;
+}
+.main-content .side-bar {
+  overflow: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+  left: 0;
+}
+.main-content .side-bar::-webkit-scrollbar {
+  width: 8px;
+}
+.main-content .side-bar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #999;
+}
+.main-content .side-bar > ul {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-content .side-bar .personal-data-info {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+  padding-block-start: 12px;
+}
+.main-content .side-bar ul > h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 22px;
+}
+.main-content .side-bar svg,
+.main-content .side-bar i,
+.main-content .side-bar img {
+  width: 24px;
+  aspect-ratio: 1/1;
+}
+.main-content .side-bar svg::before,
+.main-content .side-bar i::before,
+.main-content .side-bar img::before {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  line-height: 24px;
+}
+.main-content .side-bar :where(a):not(.guide-link) {
+  font-size: 14px;
+  gap: 1.72em;
+  border-radius: 0.75rem;
+  min-height: 40px;
+  line-height: 20px;
+}
+.main-content .side-bar :where(a):not(.guide-link):focus, .main-content .side-bar :where(a):not(.guide-link).active {
+  font-weight: 500;
+}
+.main-content .side-bar :where(a):not(.guide-link):hover, .main-content .side-bar :where(a):not(.guide-link):focus, .main-content .side-bar :where(a):not(.guide-link).active {
+  background-color: #eee;
+}
+.main-content .guide-link {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-right: 8px;
+  color: #606060;
+  cursor: pointer;
+}
+.main-content #copyright {
+  color: #909090;
+  font-size: 12px;
+}
+
+.videos-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.videos-grid .video-card {
+  overflow: hidden;
+  min-height: 300px;
+}
+.videos-grid .video-card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+.videos-grid .video-card-image img {
+  object-fit: cover;
+  width: 100%;
+}
+.videos-grid .video-card-text .channel-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.videos-grid .video-card-text .verify-icon {
+  width: 14px;
+}
+.videos-grid .video-card-text .video-description {
+  flex: 1;
+}
+.videos-grid .video-card-text .video-description h3 {
+  font-size: 14px;
+}
+.videos-grid .video-card-text .video-description span,
+.videos-grid .video-card-text .video-description .channel-name {
+  font-size: 12px;
+  color: #606060;
+}
+.videos-grid .video-card-text .video-menu {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+}
+
+/*# sourceMappingURL=style.css.map */
